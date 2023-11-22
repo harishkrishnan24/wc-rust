@@ -24,6 +24,14 @@ fn main() {
                 Err(e) => panic!("Error reading file: {e}"),
             }
         }
+        "-w" => {
+            let filename = &args[1];
+            let contents = fs::read_to_string(filename);
+            match contents {
+                Ok(data) => println!("{} {}", data.split_whitespace().count(), filename),
+                Err(e) => panic!("Error reading file: {e}"),
+            }
+        }
         _ => panic!("invalid arguments"),
     };
 }
