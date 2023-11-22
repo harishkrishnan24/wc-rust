@@ -13,7 +13,7 @@ fn main() {
             let contents = fs::read(filename);
             match contents {
                 Ok(data) => println!("{} {}", data.len(), filename),
-                Err(e) => panic!("{e}"),
+                Err(e) => panic!("Error reading file: {e}"),
             }
         }
         _ => panic!("invalid arguments"),
