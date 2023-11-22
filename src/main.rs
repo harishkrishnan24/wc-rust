@@ -4,7 +4,7 @@ fn main() {
     let args: Vec<String> = env::args().skip(1).collect();
 
     if args.len() != 2 {
-        panic!("invalid arguments");
+        panic!("USAGE: wc -c test.txt");
     }
 
     match args[0].as_str() {
